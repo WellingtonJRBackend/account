@@ -1,22 +1,22 @@
 package bank;
 
-public class Account {
+public abstract class Account implements AccountService {
 
-	private String name;
+	private Account account;
 
-	public Account() {
+	public Account(Account account) {
+		this.account = account;
 	}
 
-	public Account(String name) {
-		this.name = name;
+	public Account getAccount() {
+		return account;
 	}
 
-	public String getName() {
-		return name;
+	public void setAccount(Account account) {
+		this.account = account;
 	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+	
+	
+	
 
 }
