@@ -6,11 +6,11 @@ public class Business extends Account {
 	private String holder;
 	private Double balance;
 
-	public Business(Account account, Integer number, String holder, Double balance) {
+	public Business(Account account, Integer number, String holder, Double initialDeposit) {
 		super(account);
 		this.number = number;
 		this.holder = holder;
-		this.balance = balance;
+		deposit(initialDeposit);
 	}
 
 	public Integer getNumber() {
