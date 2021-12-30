@@ -1,13 +1,21 @@
 package bank;
 
-public class Business extends Account {
+public class Business implements AccountService{
 
 	private Integer number;
 	private String holder;
-	private Double balance;
+	protected double balance;
 
-	public Business(Account account, Integer number, String holder, Double initialDeposit) {
-		super(account);
+	public Business() {
+	}
+
+	public Business(  Integer number, String holder) {
+		this.number = number;
+		this.holder = holder;
+	}
+
+	public Business(Integer number, String holder, Double initialDeposit) {
+		
 		this.number = number;
 		this.holder = holder;
 		deposit(initialDeposit);
@@ -37,6 +45,10 @@ public class Business extends Account {
 	@Override
 	public void withdraw(double amount) {
 		balance -= amount;
+	}
+
+	public String toString() {
+		return "Number " + number + "," + " Holder: " + holder + ", Balance $ " + String.format("%.2f", balance);
 	}
 
 }
