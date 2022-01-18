@@ -2,8 +2,8 @@ package bank;
 
 public class Business implements AccountService{
 
-	private Integer number;
-	private String holder;
+	protected Integer number;
+	protected String holder;
 	protected double balance;
 
 	public Business() {
